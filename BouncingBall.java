@@ -102,7 +102,8 @@ public class BouncingBall extends JFrame {
 	private class DrawingCanvas extends JPanel {
 
 		@Override
-		protected void paintComponent(Graphics g) {
+		protected void paintComponent(Graphics g) {long start = System.nanoTime();
+
 			super.paintComponent(g);
 			setBackground(Color.WHITE);
 			//Ball
