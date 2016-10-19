@@ -102,16 +102,18 @@ public class BouncingBall extends JFrame {
 	private class DrawingCanvas extends JPanel {
 
 		@Override
-		protected void paintComponent(Graphics g) {long start = System.nanoTime();
-
+		protected void paintComponent(Graphics g) {
+			long start = System.nanoTime();
 			super.paintComponent(g);
 			setBackground(Color.WHITE);
-			//Ball
+			// Ball
 			g.setColor(ballColor);
 			g.fillOval(x, y, size, size);
-			//Mouse trail
+			// Mouse trail
 			g.setColor(Color.RED);
-			g.fill3DRect(mouseX-10, mouseY-10, 20, 20,true);
+			g.fill3DRect(mouseX - 10, mouseY - 10, 20, 20, true);
+			long duration = System.nanoTime() - start;
+			System.out.println("timer " + duration);
 		}
 	}
 }
