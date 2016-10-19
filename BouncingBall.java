@@ -24,7 +24,7 @@ public class BouncingBall extends JFrame {
 	private static final int UPDATETIME = 5;
 	private DrawingCanvas canvas;
 	int x = 50, y = 50;
-	int size = 50;
+	int size = 30;
 	int xSpeed = 1, ySpeed = 2;
 	Color[] ballColorArray = { Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.GRAY, Color.PINK, Color.BLACK };
 	Color ballColor = Color.BLACK;
@@ -102,16 +102,18 @@ public class BouncingBall extends JFrame {
 	private class DrawingCanvas extends JPanel {
 
 		@Override
-		protected void paintComponent(Graphics g) {long start = System.nanoTime();
-
+		protected void paintComponent(Graphics g) {
+			long start = System.nanoTime();
 			super.paintComponent(g);
 			setBackground(Color.WHITE);
-			//Ball
+			// Ball
 			g.setColor(ballColor);
 			g.fillOval(x, y, size, size);
-			//Mouse trail
+			// Mouse trail
 			g.setColor(Color.RED);
 			g.fillOval(mouseX-10, mouseY-10, 20, 20);
+			long duration = System.nanoTime() - start;
+			System.out.println("timer " + duration);
 		}
 	}
 }
