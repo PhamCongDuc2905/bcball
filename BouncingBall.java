@@ -52,7 +52,7 @@ public class BouncingBall extends JFrame {
 			public void mouseDragged(MouseEvent e) {
 				
 				
-			}
+			} 
 		});
 		//Repeated task
 		ActionListener updateTask = new ActionListener() {
